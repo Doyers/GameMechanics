@@ -6,7 +6,8 @@ public class OutOfBounds : MonoBehaviour {
 
     public GameObject[] checkpoints;
     private Vector3 currentCheckpoint;
-
+    private bool newCheckpointReached;
+    private int checkPointNumber;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +20,10 @@ public class OutOfBounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+
         ///TODO
         ///if player gets to new checkpoint EN is groter dan de vorige checkpoint, maar dat nieuwe checkpoint
-
+        
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +31,6 @@ public class OutOfBounds : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.transform.position = currentCheckpoint;
-            Debug.Log("player collision");
         }
     }
 }
